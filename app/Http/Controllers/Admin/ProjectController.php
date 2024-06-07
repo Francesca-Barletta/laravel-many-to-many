@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Http\Requests\StoreProjectRequest;
@@ -27,8 +28,9 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::orderBy('name', 'asc')->get();
+        $technologies = Technology::orderBy('name', 'asc')->get();
 
-        return view('admin.projects.create', compact('types'));
+        return view('admin.projects.create', compact('types','technologies'));
     }
 
     /**
@@ -59,6 +61,13 @@ class ProjectController extends Controller
         $form_data['slug'] = $slug;
 
         $new_project = Project::create($form_data);
+        
+        if($request->has('technologies')){
+
+            $new_project->technologies()->attach($form_data['technologies']);
+        }
+
+
         return to_route('admin.projects.show', $new_project);
     }
 
