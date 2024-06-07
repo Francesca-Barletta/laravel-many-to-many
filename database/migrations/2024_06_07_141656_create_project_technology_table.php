@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('project_technology', function (Blueprint $table) {
          $table->UnsignedBigInteger('technology_id');
          $table->foreign('technology_id')->references('id')->on('technology')->onDelete('cascade');
+         $table->UnsignedBigInteger('project_id');
+         $table->foreign('project_id')->references('id')->on('project')->onDelete('cascade');
+         $table->primary(['technology_id','project_id']);
         });
     }
 
