@@ -14,6 +14,14 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $project->progetto }}</h5>
                                 <p class="card-text">{{ $project->descrizione }}</p>
+                                <p>Tipo: {{$project->type ? $project->type->name : ''}}</p>
+                                <p>Tecnologia:
+                                  
+                                    @foreach($project->technologies as $tech)
+                                    <span>{{$tech->name}}</span>
+                                    @endforeach
+                                
+                                </p>
                                 <a href="{{ $project->link }}">Vai alla repo Git-hub</a>
                                 <div class="card-buttons">
                                     <p><a href="{{ route('projects.show', $project) }}" class="btn">Mostra</a></p>

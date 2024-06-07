@@ -31,6 +31,15 @@
                     @endforeach
                 </select>
             </div>
+            <div>
+                @foreach($technologies as $tech)
+                <div class="form-check">
+                    <input @checked( in_array($tech->id, old('technologies', $project->technologies->pluck('id')->all()))) type="checkbox" id="tech-{{ $tech->id }}" value="{{ $tech->id }}" name="technologies[]" class="form-check-input" >
+                    <label  class="form-check-label" for="tech-{{ $tech->id }}">{{ $tech->name }}</label>
+                </div>
+               
+                @endforeach
+            </div>
             <button class="btn btn-primary">Modifica</button>
         </div>
         @if ($errors->any())

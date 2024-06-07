@@ -24,10 +24,11 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'progetto' => 'required|string',
-            'slug'=>['required', 'max:255', Rule::unique('projects')->ignore($this->project)],
+           
             'descrizione' => 'required|max:2000',
             'link' =>'required|string',
-            'type_id'=> 'nullable|exists:types,id'
+            'type_id'=> 'nullable|exists:types,id',
+            'technologies'=>'exists:technologies,id'
         ];
     }
 }

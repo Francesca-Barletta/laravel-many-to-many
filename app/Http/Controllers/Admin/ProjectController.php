@@ -19,7 +19,9 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('admin.projects.index', compact('projects'));
+        $technologies = Technology::all();
+    
+        return view('admin.projects.index', compact('projects', 'technologies'));
     }
 
     /**
@@ -83,10 +85,14 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Project $project)
-    {
+    {   
+        //recupero tecnologie
+        $project->load('technologies');
         $types = Type::orderBy('name', 'asc')->get();
+        $technologies = Technology::orderBy('name', 'asc')->get();
+    
 
-        return view('admin.projects.edit', compact('project', 'types'));
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -102,6 +108,14 @@ class ProjectController extends Controller
         // ]);
         $form_data = $request->validated();
         $project->update($form_data);
+
+        if($request->has('technologies')){
+
+            $project->technologies()->sync($request->technologies);
+        }else{
+            $project->technologies()->detach();
+        }
+
  
         return to_route('admin.projects.show', $project);
     }
