@@ -1,0 +1,52 @@
+.index-content{
+    background-color: #fdd39c;
+    min-height: 100%;
+    padding:50px;
+}
+.col-3{
+    min-width: 300px;
+}
+.card{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    min-height: 100%;
+   
+
+    
+}
+.card-body{
+    display:flex;
+    flex-direction:column;
+    padding: 20px;
+    gap:8px;
+    p{
+        margin:0;
+    }
+    .btn{
+        background-color: #162A45;
+        color:#FFB552;
+        &:hover{
+            color:white;
+            font-weight:500;
+        }
+    }
+}
+.image-cap{
+    width:100%;
+    aspect-ratio: 1/1;
+    background-color: #162A45;
+    border-radius:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3{
+        color:white;
+        font-family: "Luckiest Guy", cursive;
+        }
+}
+.card-buttons{
+    display: flex;
+    justify-content: space-between;
+}

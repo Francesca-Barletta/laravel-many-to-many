@@ -1,0 +1,26 @@
+.modal{
+    display:none;
+    position:absolute;
+    top: 0;
+    left: 0;
+height:500px;
+    background-color: rgba(0, 0, 0, 0.671);
+    color:white;
+    .modal-box{
+        display:flex;
+        height: 100%;
+        align-items:center;
+        justify-content:center;
+        span{
+            margin:20px;
+            font-weight: 800;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.visible{
+    display:block;
+}
