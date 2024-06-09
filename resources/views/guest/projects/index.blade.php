@@ -14,8 +14,11 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ $project->progetto }}</h5>
                   <p class="card-text">{{ $project->descrizione }}</p>
-                  <a href="{{ $project->link }}">Vai alla repo Git-hub</a>
-                  <p><a href="{{ route('projects.show', $project) }}" class="btn">Mostra</a></p>
+                  <a href="{{ $project->link }}" class="link-git">Vai alla repo Git-hub</a>
+                  <div class="card-buttons">
+                    <p><a href="{{ route('projects.show', $project) }}" class="btn">Mostra</a></p>
+                  </div>
+                
                 </div>
               </div>
             </div>
