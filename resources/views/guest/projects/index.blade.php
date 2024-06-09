@@ -9,8 +9,14 @@
               <div class="card">
               
                 <div class="image-cap">
-                  <h3>{{ $project->progetto }}</h3>
-                </div>
+                  @if($project->image)
+                  <img src="{{ Vite::asset("resources/img/$project->image") }}" alt="" class="card-image">
+                  @else
+                  <div class="proj-title">
+                      <h3>{{ $project->progetto }}</h3>
+                  </div>
+                  @endif
+              </div>
                 <div class="card-body">
                   <h5 class="card-title">{{ $project->progetto }}</h5>
                   <p class="card-text">{{ $project->descrizione }}</p>

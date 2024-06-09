@@ -12,8 +12,11 @@
     flex-direction:column;
     justify-content: center;
     align-items:center;
+    
     min-height: 100%;
-   
+   .image-cap{
+    min-width: 100%;
+   }
 
     
 }
@@ -34,28 +37,33 @@
             font-weight:500;
         }
     }
-    .link-git{
-  
-    }
+
 }
-.image-cap{
-    min-width:100%;
-    aspect-ratio: 1/1;
-    background-color: #162A45;
-    padding:20px;
-    border-radius:5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.proj-title{
+        min-width:100%;
+        aspect-ratio: 1/1;
+        background-color: #162A45;
+        border-radius:5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
     h3{
         color:white;
         font-family: "Luckiest Guy", cursive;
-        }
+        
+        }     
+}
+.card-image{
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius:5px;
+    
 }
 
 .card-buttons{
     display: flex;
-    // justify-content: space-between;
-    // gap:5px;
+    justify-content: space-evenly;
     margin-top: auto;
 }
