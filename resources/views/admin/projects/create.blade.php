@@ -33,7 +33,7 @@
                     @endforeach
                 </select>
             </div>
-            <div>
+            <div class="check-tech">
                 @foreach($technologies as $tech)
                 <div class="form-check">
                     <input @checked( in_array($tech->id, old('technologies', []))) type="checkbox" id="tech-{{ $tech->id }}" value="{{ $tech->id }}" name="technologies[]" class="form-check-input" >

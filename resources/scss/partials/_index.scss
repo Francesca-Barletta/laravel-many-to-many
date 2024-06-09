@@ -2,10 +2,11 @@
     background-color: #fdd39c;
     min-height: 100%;
     padding:50px;
+    .row{
+        row-gap:30px;
+    }
 }
-.col-3{
-    min-width: 300px;
-}
+
 .card{
     display:flex;
     flex-direction:column;
@@ -49,4 +50,6 @@
 .card-buttons{
     display: flex;
     justify-content: space-between;
+    gap:5px;
+    margin-top: auto;
 }

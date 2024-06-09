@@ -2,11 +2,14 @@
     min-height: 100%;
     background-image: url('/resources/img/background.jpg');
     background-size: cover;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
  .main-title{
     font-family: "Luckiest Guy", cursive;
-    margin-left:100px;
     font-size:100px;
     color:#162A45;
  }

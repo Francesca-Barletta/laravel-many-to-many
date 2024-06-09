@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="container-fluid home d-flex justify-conten-center align-items-center">
+    <div class="container-fluid home">
         {{-- <div class="logo_laravel">
             <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-25">
                 <g clip-path="url(#clip0)" fill="#EF3B2D">
@@ -9,9 +9,9 @@
                 </g>
             </svg>
         </div> --}}
-        <h1 class="main-title  p-5">
+        <h1 class="main-title">
           FRANCESCA<br> BARLETTA
         </h1>
-        <h3 class="second-title ps-3">WEB DEVELOPER</h3>
+        <h3 class="second-title">WEB DEVELOPER</h3>
     </div>  
 @endsection

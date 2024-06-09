@@ -24,7 +24,12 @@
                                 </p>
                                 <a href="{{ $project->link }}">Vai alla repo Git-hub</a>
                                 <div class="card-buttons">
+                                    @auth
+                                    <p><a href="{{ route('admin.projects.show', $project) }}" class="btn">Mostra</a></p>
+                                    @endauth
+                                    @guest
                                     <p><a href="{{ route('projects.show', $project) }}" class="btn">Mostra</a></p>
+                                    @endguest
                                     @auth
                                         <p><a
                                                 href="{{ route('admin.projects.edit', $project) }}"class="text-decoration-none btn edit">Modifica</a>
