@@ -34,6 +34,15 @@
     
     
         </div>
-       
-    </div>
+     
+        @if($project->type)
+        <div class="container">
+            <h3>Progetti correlati</h3>
+        @foreach($project->type->projects as $related_proj)
+            <div>
+                 <a href="{{ route('admin.projects.show', $related_proj) }}"><h3>{{ $related_proj->progetto }}</h3></a>
+            </div>
+        @endforeach
+        </div>
+        @endif
 @endsection

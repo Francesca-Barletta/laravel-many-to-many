@@ -13,7 +13,7 @@ class Type extends Model
     protected $fillable = [
         'name','slug'
     ];
-    public function project()
+    public function projects()
     {
         return $this->hasMany(Project::class);
     }
