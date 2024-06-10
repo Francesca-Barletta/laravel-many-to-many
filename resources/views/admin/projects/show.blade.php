@@ -45,4 +45,13 @@
         @endforeach
         </div>
         @endif
+        @if($project->technology)
+        <div class="container">
+        @foreach($project->technology->projects as $related_proj)
+            <div>
+                <a href="{{ route('admin.projects.show', $related_proj) }}"><h3>{{ $related_proj->progetto }}</a>
+            </div>
+        @endforeach
+        </div>
+        @endif
 @endsection

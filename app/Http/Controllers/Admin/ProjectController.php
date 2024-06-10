@@ -78,8 +78,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        $project->load(['type', 'type.projects']);
-        
+        $project->load(['type', 'type.projects', 'technologies', 'technologies.projects']);
+
         return view('admin.projects.show', compact('project'));
     }
 
