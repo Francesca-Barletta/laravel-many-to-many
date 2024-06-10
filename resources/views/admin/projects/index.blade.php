@@ -2,6 +2,20 @@
 @section('title', 'Progetti | Francesca Barletta')
 @section('content')
     <div class="container-fluid index-content position-relative">
+        <div class="mb-2">
+            
+            <form action="{{ route('admin.projects.index') }}" method="GET">
+         
+            <label for="type_id" class="form-label"><h3>Filtra per tipo</h3></label>
+            <select class="form-control filter" name="type_id" id="type_id">
+                <option value="">Scegli il tipo</option>
+                @foreach($types as $type)
+                    <option @selected($type->id == old('type_id')) value="{{ $type->id }}">{{ $type->name }}</option>
+                @endforeach
+            </select>
+            <button class="mt-2 btn btn-back">filtra</button>
+        </form>
+        </div>
         <div class="row">
             @foreach ($projects as $project)
                 <div class="col-3">

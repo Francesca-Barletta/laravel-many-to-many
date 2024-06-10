@@ -16,12 +16,25 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projects = Project::all();
+        // $projects = Project::all();
         $technologies = Technology::all();
+        $types = Type::all();
+
+        $query_type = Project::with(['type', 'type.projects']);
+
+        $filter = $request->all();
+
+        if(isset($filter['type_id'])) {
+
+            $query_type->where('type_id', $filter['type_id']);
+
+        }
+
+        $projects = $query_type->get();
     
-        return view('admin.projects.index', compact('projects', 'technologies'));
+        return view('admin.projects.index', compact('projects', 'types', 'technologies'));
     }
 
     /**
